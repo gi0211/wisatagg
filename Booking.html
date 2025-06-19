@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Pemesanan Tiket</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('https://2.bp.blogspot.com/-r8TviXkrDt0/VHRmEttBDyI/AAAAAAAAAGI/KD5nXrFtzJc/s1600/Cool-Wallpaper.jpg'); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: Arial, sans-serif;
+  color: #333;
+  padding: 20px;
+}
+
+h1 {
+  color: #0c0b0b;
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 2.5em;
+}
+
+.card-wrapper {
+  display: block;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.card-wrapper .card {
+  background: #ffffff;
+  padding: 30px 20px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px -6px #0003;
+  border: 2px solid #1f1714;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-wrapper .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px -6px #0005;
+}
+
+.card-wrapper .card h2 {
+  color: #1b1514;
+  margin-bottom: 20px;
+  font-size: 1.7em;
+  font-weight: bold;
+}
+
+.card-wrapper .card label {
+  color: #1b1514;
+  margin-bottom: 10px;
+  font-weight: 500;
+  display: block;
+}
+
+.card-wrapper .card input, 
+.card-wrapper .card select {
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  border: 1px solid #110e0d;
+  border-radius: 10px;
+  background: #fff5cc;
+  outline: none;
+  transition: border 0.3s ease;
+  width: 100%;
+}
+
+.card-wrapper .card input:focus, 
+.card-wrapper .card select:focus {
+  border: 2px solid #ff7043;
+  box-shadow: 0 0 10px #ff9e79;
+}
+
+@media (min-width: 768px) {
+  .card-wrapper {
+    display: flex;
+    gap: 20px;
+  }
+  .card-wrapper .card {
+    flex: 1;
+    margin-bottom: 0;
+  }
+}
+
+.card-wrapper + button,
+.card-wrapper .card button {
+  padding: 10px 20px;
+  background: linear-gradient(90deg, #ff7e5f, #feb47b);
+  color: #ffffff;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 10px -5px #ff7e5f;
+}
+
+.card-wrapper + button:hover,
+.card-wrapper .card button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px -5px #ff7e5f;
+  background: linear-gradient(90deg, #212c8d, #ff7e5f);
+}
+</style>
+</head>
+<body>
+<h1>Pemesanan Tiket</h1>
+
+<div class="card-wrapper">
+  <div class="card">
+    <h2>Pemesanan</h2>
+    <label>Nama Lengkap</label>
+    <input id="nama" type="text" placeholder="Masukkan Nama Lengkap">
+    <label>Email</label>
+    <input id="email" type="email" placeholder="Masukkan Email">
+    <label>Nomor Telepon</label>
+    <input id="phone" type="tel" placeholder="Masukkan Nomor Telepon">
+    <label>Destinasi</label>
+    <select id="destinasi">
+      <option value="">--Pilih Destinasi--</option>
+      <option value="Bali" data-harga="1000000">Bali - Rp 1.000.000</option>
+      <option value="Raja Ampat" data-harga="1500000">Raja Ampat - Rp 1.500.000</option>
+      <option value="Danau Toba" data-harga="800000">Danau Toba - Rp 800.000</option>
+      <option value="Lombok" data-harga="950000">Lombok - Rp 950.000</option>
+      <option value="Yogyakarta" data-harga="700000">Yogyakarta - Rp 700.000</option>
+      <option value="Bromo" data-harga="850000">Gunung Bromo - Rp 850.000</option>
+      <option value="Labuan Bajo" data-harga="1600000">Labuan Bajo - Rp 1.600.000</option>
+      <option value="Belitung" data-harga="900000">Belitung - Rp 900.000</option>
+      <option value="Pulau Seribu" data-harga="600000">Kepulauan Seribu - Rp 600.000</option>
+      <option value="Tana Toraja" data-harga="1100000">Tana Toraja - Rp 1.100.000</option>
+      <option value="Wakatobi" data-harga="1300000">Wakatobi - Rp 1.300.000</option>
+      <option value="Mentawai" data-harga="1400000">Kepulauan Mentawai - Rp 1.400.000</option>
+      <option value="Bukittinggi" data-harga="750000">Bukittinggi - Rp 750.000</option>
+
+    </select>
+    <select id="Kewarganegaraan">
+      <option value="">--Pilih Kewarganegaraan--</option>
+      <option value="">Warga Negara Indonesia</option>
+      <option value="">Warga Negara Asing</option>
+    </select>
+  </div>
+
+  <div class="card">
+    <h2>Pembayaran</h2>
+    <label>Tanggal Keberangkatan</label>
+    <input id="tanggal" type="date">
+    <label>Jumlah Tiket</label>
+    <input id="tiket" type="number" min="1" value="1">
+    <label>Please transfer below</label>
+    <select id="Please Pay Here">
+      <option value="">--Pilih Metode--</option>
+      <option value="Rekening BRI 04812671457">Rekening BRI 04812671457</option>
+      <option value="E-Wallet Dana 08327164514">E-Wallet Dana 08327164514</option>
+    </select>
+    <label>Harga per Tiket</label>
+    <input id="harga" type="text" disabled>
+    <label>Total</label>
+    <input id="total" type="text" disabled>
+    <br><br>
+    <button id="pesanBtn">Pesan Tiket</button>
+  </div>
+</div>
+
+<script>
+  const destinasi = document.getElementById('destinasi');
+  const tiket = document.getElementById('tiket');
+  const harga = document.getElementById('harga');
+  const total = document.getElementById('total');
+
+  function updateTotal(){
+    const selected = destinasi.options[destinasi.selectedIndex];
+    const price = parseInt(selected.dataset.harga) || 0;
+    const qty = parseInt(tiket.value) || 0;
+    if (price && qty) {
+      total.value = 'Rp ' + (price * qty).toLocaleString('id');
+    } else {
+      total.value = '';
+    }
+  }
+  
+  destinasi.addEventListener('change', () => {
+    const selected = destinasi.options[destinasi.selectedIndex];
+    if (selected.dataset.harga) {
+      harga.value = 'Rp ' + parseInt(selected.dataset.harga).toLocaleString('id'); 
+    } else {
+      harga.value = '';
+    }
+    updateTotal();
+  });
+
+  tiket.addEventListener('input', updateTotal);
+
+  document.getElementById('pesanBtn').addEventListener('click', function() {
+    const nama = document.getElementById('nama').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const destinasiText = destinasi.options[destinasi.selectedIndex].innerText;
+    const tanggal = document.getElementById('tanggal').value;
+    const qty = tiket.value;
+    const pembayaran = document.getElementById('pembayaran').value;
+    const price = harga.value;
+    const totalPrice = total.value;
+
+    if (!nama || !email || !phone || !destinasi.value || !tanggal || !qty || !pembayaran) {
+      alert('Silakan lengkapi form terlebih dahulu');
+      return;
+    }
+    // Ganti nomor di bawah sesuai nomor WhatsApp Anda
+    const nomorWA = "6282269165383";
+    const pesan = `Halo, saya ingin memesan tiket:\n- Nama: ${nama}\n- Email: ${email}\n- Telepon: ${phone}\n- Destinasi: ${destinasiText}\n- Tanggal: ${tanggal}\n- Jumlah Tiket: ${qty}\n- Metode Pembayaran: ${pembayaran}\n- Harga per Tiket: ${price}\n- Total: ${totalPrice}`;
+
+    const url = `https://wa.me/${nomorWA}?text=${encodeURIComponent(pesan)}`;
+
+    window.location.href = url;
+  });
+</script>
+
+</body>
+</html>
